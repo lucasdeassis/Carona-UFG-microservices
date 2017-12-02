@@ -1,0 +1,10 @@
+{
+  "name": "carona-ufg-domain",
+  "version": "1.0.0",
+  "description": "domain package from carona ufg project",
+  "main": "domain.js",
+  "scripts": {
+  },
+  "author": "lucasdeassis",
+  "license": "MIT"
+}

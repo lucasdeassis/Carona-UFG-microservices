@@ -1,0 +1,14 @@
+{
+  "name": "carona-ufg-trips-api",
+  "version": "1.0.0",
+  "description": "api to fetch trips from carona-ufg",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "lucasdeassis",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
