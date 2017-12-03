@@ -1,12 +1,12 @@
 {
-  "name": "carona-ufg-trips-api",
+  "name": "carona-ufg-drivers-api",
   "version": "1.0.0",
-  "description": "api to fetch trips from carona-ufg",
+  "description": "api to fetch drivers from carona-ufg",
   "main": "server.js",
   "scripts": {
     "test": "mocha"
   },
-  "author": "lucasdeassis",
+  "author": "viniciuscmachado",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.2",
