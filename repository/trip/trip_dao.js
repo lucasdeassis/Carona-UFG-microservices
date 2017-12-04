@@ -20,4 +20,4 @@ const addDummy = () => {
   });
 }
 
-module.exports.trip = Object.assign({}, { getTrips, addDummy });
+module.exports = Object.assign({}, { getTrips, addDummy });

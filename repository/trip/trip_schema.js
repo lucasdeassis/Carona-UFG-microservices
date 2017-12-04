@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const { Trip } = require('../../domain/domain');
+const { Trip } = require('../../domain/index');
 const UserSchema = require('./user_schema');
 
 const TripSchema = new Trip(String, String, String, Number, String,

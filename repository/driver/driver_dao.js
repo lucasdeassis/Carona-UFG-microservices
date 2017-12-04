@@ -1,21 +1,20 @@
-const DriversModel = require('./drivers_model');
+const DriversModel = require('./driver_model');
 
 const getDrivers = () => {
   return DriversModel.collection.find().toArray();
 }
 
 const addDummy = () => {
-  const DriversModel = require('./drivers_model');
-  
   return DriversModel.collection.save({
-    id: '11111',
+    ufgId: '131045',
     name: 'Vinicius Carvalho Machado',
     email: 'viniciuscmac@gmail.com',
     phone: '062999689969',
     car: 'Toyota Etios',
+    rating: 4.8,
+    course: 'Engenharia de Software',
     spots: 3,
-    rating: 4.8
   });
 }
 
-module.exports.drivers = Object.assign({}, { getDrivers, addDummy });
+module.exports = Object.assign({}, { getDrivers, addDummy });

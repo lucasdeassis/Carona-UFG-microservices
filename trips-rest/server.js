@@ -1,10 +1,20 @@
-const repository = require('../repository/repository');
+const repositoryConnection = require('../repository/connection');
 const express = require('express');
 
 const start = () => {
 
   const app = express();
   let tripRepository = {};
+
+  repositoryConnection.connect('localhost', 'carona-ufg').then(
+    (daos) => {
+      tripRepository = daos.trip;
+      console.log('listening at port 5000');
+      app.listen(5000);
+    }
+  ).catch((err) => {
+    console.log(err);
+  });
 
   app.use((req, res, next) => {
     const now = new Date().toString();
@@ -22,7 +32,6 @@ const start = () => {
         res.status(500).send({
           error: err.message
         });
-
       })
   });
 
@@ -35,21 +44,8 @@ const start = () => {
         res.status(500).send({
           error: err.message
         });
-
       })
   });
-
-  repository.connect('localhost', 'carona-ufg').then(
-    ({ daos }) => {
-      tripRepository = daos.trip;
-      console.log('listening at port 5000');
-      app.listen(5000);
-    }
-  ).catch(
-    (err) => {
-      console.log(err);
-    }
-    )
 }
 
 start();

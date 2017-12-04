@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const { User } = require('../../domain/domain');
+const { User } = require('../../domain/index');
 
 const UserSchema = new User(String, String, String, String, Number, String);
 
