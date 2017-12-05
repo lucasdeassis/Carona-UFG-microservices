@@ -7,8 +7,9 @@ const driversApi = {
   addDriver: (driver) => {
     console.log('driver', driver);
     return fetch(`http://localhost:8000/driver`, {
-      method: 'post',
-      body: driver
+      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      body: JSON.stringify(driver)
     }).then((res) => {
       console.log('res', res);
     })
