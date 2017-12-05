@@ -1,9 +1,20 @@
 const repositoryConnection = require('../repository/connection');
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const start = () => {
 
   const app = express();
+
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    next();
+  });
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
+
   let driversRepository = {};
 
   repositoryConnection.connect('localhost', 'carona-ufg').then(
@@ -37,7 +48,8 @@ const start = () => {
   });
 
   app.post('/driver', function (req, res) {
-    driversRepository.addDummy()
+    console.log('req', req.body);
+    driversRepository.addDriver(req.body.driver)
       .then(() => {
         res.status(200).send('OK');
       }

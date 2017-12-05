@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
+import driversApi from '../api/drivers-api'
 
 export default class DriverForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
-      ufgId: '',
-      name: '',
-      email: '',
-      phone: '',
-      car: '',
-      rating: '',
-      course: '',
-      spots: ''
+      driver: {
+        ufgId: '',
+        name: '',
+        email: '',
+        phone: '',
+        car: '',
+        rating: 0,
+        course: '',
+        spots: 0
+      }
+
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -20,30 +23,27 @@ export default class DriverForm extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    const driver = {
+      ...this.state.driver,
+      [event.target.name]: event.target.value
+    }
+    this.setState({ driver });
   }
 
   handleSubmit = (event) => {
     console.log(this.state);
-
-
-    //TODO: FAZER O POST DO DRIVER AQUI
-    fetch('localhost:8000/addDriver/', {
-      method: 'POST',
-      body: JSON.stringify(this.state)
-    }).then((response) => {
-      response.json()
-      console.log('response.json()', response.json());
-    });
+    event.preventDefault();
+    driversApi.addDriver(this.state.driver)
   }
 
-  renderInput = (prop) => {
+
+  renderInput = (prop, type) => {
     return (
       <div className="driver-input">
         <label>
           {prop}
         </label>
-        <input type="text" name={prop} value={this.state[prop]} onChange={this.handleChange} />
+        <input type={type} name={prop} value={this.state[prop]} onChange={this.handleChange} />
       </div>
     );
 
@@ -52,14 +52,14 @@ export default class DriverForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        { this.renderInput('ufgId') }
-        { this.renderInput('name') }
-        { this.renderInput('email') }
-        { this.renderInput('phone') }
-        { this.renderInput('car') }
-        { this.renderInput('rating') }
-        { this.renderInput('course') }
-        { this.renderInput('spots') }
+        { this.renderInput('ufgId', 'text') }
+        { this.renderInput('name', 'text') }
+        { this.renderInput('email', 'text') }
+        { this.renderInput('phone', 'text') }
+        { this.renderInput('car', 'text') }
+        { this.renderInput('rating','number') }
+        { this.renderInput('course', 'text') }
+        { this.renderInput('spots', 'number') }
         <input type="submit" value="Submit" />
       </form>
     );
