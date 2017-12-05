@@ -63,7 +63,7 @@ export class DriverList extends Component{
             <tbody>
               { this.state.successDriverList ? this.populateList(this.state.drivers):
                 <tr>
-                  <td colspan="8">Nenhum motorista foi cadastrado ou não foi possível obter as informações!</td>
+                  <td colSpan="8">Nenhum motorista foi cadastrado ou não foi possível obter as informações!</td>
                 </tr>
               }
             </tbody>

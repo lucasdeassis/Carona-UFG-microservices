@@ -53,6 +53,11 @@
   text-align: center;
 }
 
+.forms {
+  display: flex;
+  flex-direction: row;
+}
+
 input[type=text],input[type=number] {
   font-size: 16px;
   padding:5px;
