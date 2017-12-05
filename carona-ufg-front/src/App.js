@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './assets/car.png';
 import './App.css';
-import DriverForm from './components/driver-form';
+import DriverForm from './components/driverForm';
+import { DriverList } from './components/driverList';
 
 class App extends Component {
   render() {
@@ -12,8 +13,12 @@ class App extends Component {
           <h1 className="App-title">Carona UFG</h1>
         </header>
         <div className="driver-form">
-          <h3 className="section-title"> Cadastrar Motorista</h3>
+          <h3 className="section-title">Cadastrar Motorista</h3>
           <DriverForm/>
+        </div>
+
+        <div className="driver-list">
+          <DriverList/>
         </div>
       </div>
     );
