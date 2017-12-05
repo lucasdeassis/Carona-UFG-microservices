@@ -17,4 +17,10 @@ const addDummy = () => {
   });
 }
 
+const addDriver = (driver) => {
+  return DriversModel.collection.save({
+    ...driver
+  });
+}
+
 module.exports = Object.assign({}, { getDrivers, addDummy });

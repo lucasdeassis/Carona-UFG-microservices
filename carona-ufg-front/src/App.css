@@ -25,3 +25,25 @@
   font-size: large;
 }
 
+.driver-form {
+  margin: 50px;
+  text-align: left;
+  max-width: 300px;
+}
+
+.driver-input {
+  margin-bottom: 15px;
+}
+
+.driver-input label {
+  display: inline-block;
+  width: 20%;
+}
+
+.driver-input input {
+  width: 70%;
+}
+
+.section-title {
+  text-align: center;
+}
