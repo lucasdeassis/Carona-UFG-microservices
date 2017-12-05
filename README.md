@@ -1,6 +1,6 @@
-# NodeJS Domain Driven Design Carona-UFG Microservices example
+# Carona-UFG Microservices
 
-This is a repo to demonstrate the use of [Domain Driven Design (DDD)](https://github.com/p0w34007/ebooks/blob/master/Eric%20Evans%202003%20-%20Domain-Driven%20Design%20-%20Tackling%20Complexity%20in%20the%20Heart%20of%20Software.pdf) and microservices for NodeJS.
+This is a repo to demonstrate the use of [Domain Driven Design (DDD)](https://github.com/p0w34007/ebooks/blob/master/Eric%20Evans%202003%20-%20Domain-Driven%20Design%20-%20Tackling%20Complexity%20in%20the%20Heart%20of%20Software.pdf) and microservices in NodeJS.
 
 The domain chosen was the [CaronaUFG](https://github.com/moiseshilario/Carona-UFG) one.
 
