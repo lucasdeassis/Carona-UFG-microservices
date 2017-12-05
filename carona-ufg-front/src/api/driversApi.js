@@ -1,11 +1,7 @@
 const driversApi = {
   getDrivers: () => {
     return fetch(`http://localhost:8000/driver`)
-    .then((response) => {
-      console.log('response', response.body);
-      return response.body
-    }
-    );
+    .then((response) => response.json())
   },
 
   addDriver: (driver) => {

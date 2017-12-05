@@ -40,7 +40,8 @@ const start = () => {
   app.get('/driver', function (req, res) {
     driversRepository.getDrivers()
       .then((driversList) => {
-        res.send(driversList);
+        console.log('driversList', driversList);
+        res.json(driversList);
       }
       ).catch(err => {
         res.status(500).send({
