@@ -5,6 +5,7 @@ This is a repo to demonstrate the use of [Domain Driven Design (DDD)](https://gi
 The domain chosen was the [CaronaUFG](https://github.com/moiseshilario/Carona-UFG) one.
 
 ### Stack
+- ReactJS 16.2.0
 - NodeJS 8.9.1
 - MongoDB 3.4.10
 
@@ -14,17 +15,19 @@ The domain chosen was the [CaronaUFG](https://github.com/moiseshilario/Carona-UF
 
 ### How to run
 
-before all, download and install mongodb in your user folder, go to the mongo bin folder and run
+Before all, download and install mongodb in your user folder and execute the repository start script
 ```
-$ ./mongod --dbpath ~/mongo-data/
+$ cd repository/
+$ ./start.sh/
 ```
-to start the mongo daemon.
 
-Now you have mongodb running in order to connect using the repository.
+Which sets mongodb running for the repository to work.
 
-Then, run the *Rest API* projects and if everything works fine, you'll see the host and port server message `listening at port http://localhost:5000`
+Then, run the *Rest API* projects and if everything works fine, you'll see the host and port server message `listening at port http://localhost:5000`.
 
-And that's it! consume the API and see the results!
+And run the *React* front-end project to see on-screen results.
+
+That's it!
 
 ### Reference
 
