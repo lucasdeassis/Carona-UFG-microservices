@@ -49,9 +49,9 @@ const start = () => {
   });
 
   app.post('/trip', function (req, res) {
-    tripRepository.addDummy()
+    tripRepository.addTrip(req.body)
       .then(() => {
-        res.status(200).send('');
+        res.status(200).send('OK');
       }
       ).catch(err => {
         res.status(500).send({
