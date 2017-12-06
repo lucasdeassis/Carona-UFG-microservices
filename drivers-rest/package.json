@@ -9,6 +9,7 @@
   "author": "viniciuscmachado",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mongoose": "^4.13.6"
   }

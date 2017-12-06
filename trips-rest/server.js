@@ -1,5 +1,20 @@
 const repositoryConnection = require('../repository/connection');
 const express = require('express');
+const bodyParser = require('body-parser');
+
+const cors = (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  next();
+};
+
+const timeLogger = (req, res, next) => {
+  const now = new Date().toString();
+
+  console.log(`${now}: ${req.method} ${req.url}`);
+  next();
+};
 
 const start = () => {
 
@@ -16,17 +31,15 @@ const start = () => {
     console.log(err);
   });
 
-  app.use((req, res, next) => {
-    const now = new Date().toString();
-
-    console.log(`${now}: ${req.method} ${req.url}`);
-    next();
-  });
+  app.use(cors);
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
+  app.use(timeLogger);
 
   app.get('/trip', function (req, res) {
     tripRepository.getTrips()
       .then((tripList) => {
-        res.send(tripList);
+        res.json(tripList);
       }
       ).catch(err => {
         res.status(500).send({
@@ -36,9 +49,9 @@ const start = () => {
   });
 
   app.post('/trip', function (req, res) {
-    tripRepository.addDummy()
+    tripRepository.addTrip(req.body)
       .then(() => {
-        res.status(200).send('');
+        res.status(200).send('OK');
       }
       ).catch(err => {
         res.status(500).send({
