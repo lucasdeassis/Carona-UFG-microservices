@@ -4,6 +4,7 @@ import './App.css';
 import DriverForm from './components/driverForm';
 import TripForm from './components/tripForm';
 import { DriverList } from './components/driverList';
+import { TripList } from './components/tripList';
 
 
 class App extends Component {
@@ -30,6 +31,10 @@ class App extends Component {
 
         <div className="driver-list">
           <DriverList/>
+        </div>
+
+        <div className="driver-list">
+          <TripList/>
         </div>
       </div>
     );

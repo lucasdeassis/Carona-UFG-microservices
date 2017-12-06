@@ -29,14 +29,12 @@ export class TripList extends Component{
     return trips.map(trip => {
       return (
         <tr key={trip._id}>
-          <td>{trip.ufgId}</td>
-          <td>{trip.name}</td>
-          <td>{trip.email}</td>
-          <td>{trip.phone}</td>
-          <td>{trip.car}</td>
-          <td>{trip.course}</td>
-          <td>{trip.rating}</td>
+          <td>{trip.start}</td>
+          <td>{trip.destination}</td>
           <td>{trip.spots}</td>
+          <td>{trip.time}</td>
+          <td>{trip.price}</td>
+          <td>{trip.route}</td>
         </tr>
       )
     })
@@ -45,25 +43,23 @@ export class TripList extends Component{
   render() {
     return (
         <div>
-          <h3>LISTA DE MOTORISTAS</h3>
+          <h3>CARONAS</h3>
           <table>
             <thead>
               <tr>
-                <th>UFG ID</th>
-                <th>Name</th>
-                <th>email</th>
-                <th>phone</th>
-                <th>car</th>
-                <th>course</th>
-                <th>rating</th>
-                <th>spots</th>
+                <th>Origem</th>
+                <th>Destino</th>
+                <th>Vagas</th>
+                <th>Partida</th>
+                <th>Preço</th>
+                <th>Rota</th>
               </tr>
 
             </thead>
             <tbody>
               { this.state.successtripList ? this.populateList(this.state.trips):
                 <tr>
-                  <td colspan="8">Nenhum motorista foi cadastrado ou não foi possível obter as informações!</td>
+                  <td colSpan="6">Nenhuma carona foi cadastrada ou não foi possível obter as informações!</td>
                 </tr>
               }
             </tbody>
