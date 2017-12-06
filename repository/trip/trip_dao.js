@@ -22,7 +22,7 @@ const addDummy = () => {
 
 const addTrip = (trip) => {
   console.log('trip', trip);
-  return DriversModel.collection.save({
+  return TripModel.collection.save({
     id: trip.id,
     start: trip.start,
     destination: trip.destination,

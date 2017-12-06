@@ -57,7 +57,7 @@ export class TripList extends Component{
 
             </thead>
             <tbody>
-              { this.state.successtripList ? this.populateList(this.state.trips):
+              { this.state.successtripList && this.state.trips.length > 0? this.populateList(this.state.trips):
                 <tr>
                   <td colSpan="6">Nenhuma carona foi cadastrada ou não foi possível obter as informações!</td>
                 </tr>

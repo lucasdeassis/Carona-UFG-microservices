@@ -22,12 +22,25 @@ export default class TripForm extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({success: false});
+    this.setState({ success: false });
     const trip = {
       ...this.state.trip,
       [event.target.name]: event.target.value
     }
     this.setState({ trip });
+  }
+
+  handleDriverChange = (event) => {
+    const driverObj = this.props.drivers.find( driver => driver.ufgId === event.target.value);
+
+    const trip = {
+      ...this.state.trip,
+      driver: driverObj
+    }
+
+    this.setState({ trip });
+    console.log(driverObj);
+    console.log(trip);
   }
 
   handleSubmit = (event) => {
@@ -53,24 +66,43 @@ export default class TripForm extends Component {
     );
   }
 
+  renderDriverSelectOptions = () => {
+    return this.props.drivers.map(driver => {
+      return (
+        <option value={driver.ufgId} key={driver._id} >{driver.name}</option>
+      );
+    })
+  }
+
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          { this.renderInput('id', 'text') }
-          { this.renderInput('start', 'text') }
-          { this.renderInput('destination', 'text') }
-          { this.renderInput('time', 'text') }
-          { this.renderInput('spots', 'number') }
-          { this.renderInput('price','number') }
+
+          <div className="form-select">
+            <label>
+              driver
+            </label>
+            <select onChange={this.handleDriverChange}>
+              {this.renderDriverSelectOptions()}
+            </select>
+          </div>
+
+          {this.renderInput('id', 'text')}
+          {this.renderInput('start', 'text')}
+          {this.renderInput('destination', 'text')}
+          {this.renderInput('time', 'text')}
+          {this.renderInput('spots', 'number')}
+          {this.renderInput('price', 'number')}
+
           <div className="sign-up-button">
             <input type="submit" value="Criar carona" />
           </div>
         </form>
 
-      {
-        this.state.success && <h4> Carona criada com sucesso!</h4>
-      }
+        {
+          this.state.success && <h4> Carona criada com sucesso!</h4>
+        }
       </div>
 
 
