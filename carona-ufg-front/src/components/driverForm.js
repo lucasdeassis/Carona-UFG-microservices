@@ -44,7 +44,7 @@ export default class DriverForm extends Component {
 
   renderInput = (prop, type) => {
     return (
-      <div className="driver-input">
+      <div className="form-input">
         <label>
           {prop}
         </label>

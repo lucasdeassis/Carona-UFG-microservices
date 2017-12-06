@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+
+}
+
+body {
+  background: #EEE;
 }
 
 .App-logo {
@@ -25,24 +30,33 @@
   font-size: large;
 }
 
-.driver-form {
-  margin: 50px;
-  text-align: left;
-  max-width: 300px;
+.forms-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.driver-input {
+.form {
+  margin: 20px;
+  padding: 50px;
+  text-align: left;
+  min-width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+}
+
+.form-input {
   margin-bottom: 15px;
 }
 
-.driver-input label {
+.form-input label {
   text-transform: uppercase;
-  display: inline-block;
-  width: 25%;
+  display: block;
 }
 
-.driver-input input {
-  width: 70%;
+.form-input input {
+  width: 100%;
 }
 
 .section-title {
@@ -51,12 +65,10 @@
 
 .sign-up-button {
   text-align: center;
+  width: 100%;
 }
 
-.forms {
-  display: flex;
-  flex-direction: row;
-}
+
 
 input[type=text],input[type=number] {
   font-size: 16px;
@@ -79,11 +91,14 @@ input[type=submit] {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   transition: background 0.3s;
+  width: 80%;
+  text-transform: uppercase;
 }
 
 input[type=submit]:hover {
   transition: background 0.3s;
   background: #0a0;
+
 }
 
 table {
@@ -96,6 +111,7 @@ table {
 table td, table th {
   border: 1px solid #ddd;
   padding: 8px;
+  background: white;
 }
 
 table tr:nth-child(even){background-color: #f2f2f2;}

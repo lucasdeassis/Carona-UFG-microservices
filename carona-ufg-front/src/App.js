@@ -14,13 +14,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Carona UFG</h1>
         </header>
-        <div className="forms">
-          <div className="driver-form">
+        <div className="forms-container">
+
+          <div className="form">
             <h3 className="section-title">Cadastrar Motorista</h3>
             <DriverForm/>
           </div>
 
-          <div className="driver-form">
+          <div className="form">
             <h3 className="section-title">Criar Carona</h3>
             <TripForm/>
           </div>

@@ -44,7 +44,7 @@ export default class TripForm extends Component {
 
   renderInput = (prop, type) => {
     return (
-      <div className="trip-input">
+      <div className="form-input">
         <label>
           {prop}
         </label>
@@ -60,8 +60,8 @@ export default class TripForm extends Component {
           { this.renderInput('id', 'text') }
           { this.renderInput('start', 'text') }
           { this.renderInput('destination', 'text') }
-          { this.renderInput('spots', 'number') }
           { this.renderInput('time', 'text') }
+          { this.renderInput('spots', 'number') }
           { this.renderInput('price','number') }
           <div className="sign-up-button">
             <input type="submit" value="Criar carona" />
